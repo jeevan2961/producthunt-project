@@ -8,13 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Jeevan </title>
+    <title>Product Hunt </title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
     <!-- Bootstrap core CSS -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+      <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css'%}" rel="stylesheet">
 
 
 
@@ -53,6 +53,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
       {% if user.is_authenticated %}
+        <a class="nav-link " href="{% url 'create' %}"><span class="oi oi-plus"></span></a>
         <a class="nav-item nav-link " href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
       <form id="logout" method="POST" action="{% url 'logout' %}">
         {% csrf_token %}
